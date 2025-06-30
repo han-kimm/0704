@@ -47,12 +47,13 @@ export default function Home() {
                       alt={`${selected} ${i} 이미지`}
                       width={300}
                       height={300}
+                      layout="responsive"
                       className="rounded-lg"
                     />
-                    <div className="absolute bottom-0 bg-gray-100 pt-4 rounded-b-lg">
+                    <div className="absolute bottom-0 bg-gray-100 pt-4 rounded-b-lg w-full">
                       <audio
                       key={i}
-                      className="w-[300px]"
+                      className="w-full"
                       controls
                       src={`/${i}.m4a`}
                       preload="metadata"
