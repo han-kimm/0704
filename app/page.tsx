@@ -62,31 +62,34 @@ export default function Home() {
           <br />
           전시 오디오 플레이어
         </h1>
-        <div className="flex w-full justify-center">
+        <div className="flex w-full">
           <div className="p-4 flex flex-col w-full">
-            {data.map((item) => (
-              <button
-                key={item.name}
-                className={`${
-                  selected === item.name
-                    ? "font-bold bg-black text-white dark:bg-white dark:text-black"
-                    : "bg-gray-200 text-black dark:bg-black dark:border dark:border-white dark:text-white"
-                } text-[28px] mb-4 rounded-full`}
-                onClick={() => setSelected(item.name)}
-              >
-                {item.name}
-              </button>
-            ))}
+            <div className="flex flex-col md:flex-row md:justify-between md:gap-8 mb-8">
+              {data.map((item) => (
+                <button
+                  key={item.name}
+                  className={`${
+                    selected === item.name
+                      ? "font-bold bg-black text-white dark:bg-white dark:text-black"
+                      : "bg-gray-200 text-black dark:bg-black dark:border dark:border-white dark:text-white"
+                  } text-[28px] mb-4 rounded-full md:w-full`}
+                  onClick={() => setSelected(item.name)}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+
             <div className="flex flex-col gap-20 my-8 mb-24">
               {data
                 .find((item) => item.name === selected)
                 ?.order.map((v, i) => (
-                  <div className="flex gap-4" key={v[0]}>
+                  <div className="flex gap-4 justify-center" key={v[0]}>
                     <div className="flex flex-col">
                       <span className="text-[22px]">{i + 1}.</span>
                       <div className="bg-black dark:bg-white w-[1px] ml-1 grow" />
                     </div>
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 w-full md:w-1/2">
                       <h2 className="text-[24px] font-normal">{v[1]}</h2>
                       <div className="shadow-[0px_5px_15px_rgba(0,0,0,0.2)] rounded-lg overflow-hidden">
                         <div className="relative">
@@ -95,7 +98,7 @@ export default function Home() {
                             alt={`${selected} ${v[1]} 이미지`}
                             width={300}
                             height={300}
-                            layout="responsive"
+                            className="w-full h-auto"
                           />
                           <div
                             className="pointer-events-none absolute left-0 bottom-0 w-full h-1/5"
@@ -117,23 +120,27 @@ export default function Home() {
                   </div>
                 ))}
             </div>
-            {!!scroll &&
-              data.map((item) => (
-                <button
-                  key={item.name}
-                  className={`${
-                    selected === item.name
-                      ? "font-bold bg-black text-white dark:bg-white dark:text-black"
-                      : "bg-gray-200 text-black dark:bg-black dark:border dark:border-white dark:text-white"
-                  } text-[28px] mb-4 rounded-full`}
-                  onClick={() => (
-                    setSelected(item.name),
-                    window.scrollTo({ top: 0, behavior: "smooth" })
-                  )}
-                >
-                  {item.name}
-                </button>
-              ))}
+
+            {!!scroll && (
+              <div className="flex flex-col md:flex-row md:justify-between md:gap-8 mb-8">
+                {data.map((item) => (
+                  <button
+                    key={item.name}
+                    className={`${
+                      selected === item.name
+                        ? "font-bold bg-black text-white dark:bg-white dark:text-black"
+                        : "bg-gray-200 text-black dark:bg-black dark:border dark:border-white dark:text-white"
+                    } text-[28px] mb-4 rounded-full md:w-full`}
+                    onClick={() => (
+                      setSelected(item.name),
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    )}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </main>
@@ -148,7 +155,7 @@ export default function Home() {
         위로 가기 ↑
       </button>
       <footer className="flex mt-auto justify-center text-black">
-        <div className="flex flex-col text-[20px] w-full">
+        <div className="flex flex-col text-[20px] w-full md:flex-row md:justify-between">
           <a
             className="flex items-center gap-2 hover:underline hover:underline-offset-4 w-full bg-gray-100 h-20 pl-8"
             href="https://www.instagram.com/greent_mosire"
