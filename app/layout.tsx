@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "전체차랩, 전시 오디오 가이드",
   description:
-    "7월 4일. 새로운 시작을 알리는 전체차랩의 전시 오디오 가이드입니다.",
+    "[7월 4일. 새로운 시작을 알리는 전체차랩] 전시 오디오 가이드입니다.",
 };
 
 export default function RootLayout({
