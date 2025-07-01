@@ -73,7 +73,9 @@ export default function Home() {
                       ? "font-bold bg-black text-white dark:bg-white dark:text-black"
                       : "bg-gray-200 text-black dark:bg-black dark:border dark:border-white dark:text-white"
                   } text-[28px] mb-4 rounded-full md:w-full`}
-                  onClick={() => setSelected(item.name)}
+                  onClick={() =>
+                    setSelected((prev) => (prev === item.name ? "" : item.name))
+                  }
                 >
                   {item.name}
                 </button>
@@ -121,7 +123,7 @@ export default function Home() {
                 ))}
             </div>
 
-            {!!scroll && (
+            {!!selected && (
               <div className="flex flex-col md:flex-row md:justify-between md:gap-8 mb-8">
                 {data.map((item) => (
                   <button
@@ -132,7 +134,9 @@ export default function Home() {
                         : "bg-gray-200 text-black dark:bg-black dark:border dark:border-white dark:text-white"
                     } text-[28px] mb-4 rounded-full md:w-full`}
                     onClick={() => (
-                      setSelected(item.name),
+                      setSelected((prev) =>
+                        prev === item.name ? "" : item.name
+                      ),
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     )}
                   >
