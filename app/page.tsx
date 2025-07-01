@@ -151,7 +151,7 @@ export default function Home() {
         <div className="flex flex-col text-[20px] w-full">
           <a
             className="flex items-center gap-2 hover:underline hover:underline-offset-4 w-full bg-gray-100 h-20 pl-8"
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.instagram.com/greent_mosire"
             target="_blank"
             rel="noopener noreferrer"
           >
