@@ -30,6 +30,14 @@ export default function Home() {
       ],
     },
     {
+      name: "혜림",
+      order: [
+        ["hl1", "자연이 좋다."],
+        ["hl2", "설레임"],
+        ["hl3", "선물"],
+      ],
+    },
+    {
       name: "정은",
       order: [
         [
